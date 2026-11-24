@@ -260,4 +260,14 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://bonomelliestate.com/en/contact.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://bonomelliestate.com/en/contact.html"/>
   </url>
+  <url><loc>https://bonomelliestate.com/atelier.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://bonomelliestate.com/atelier.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bonomelliestate.com/en/private-atelier.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bonomelliestate.com/en/private-atelier.html"/>
+  </url>
+  <url><loc>https://bonomelliestate.com/en/private-atelier.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://bonomelliestate.com/atelier.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bonomelliestate.com/en/private-atelier.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bonomelliestate.com/en/private-atelier.html"/>
+  </url>
 </urlset>
