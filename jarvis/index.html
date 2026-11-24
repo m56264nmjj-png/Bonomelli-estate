@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#11150f">
+<title>JARVIS</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-180.png">
+<style>
+@font-face{font-family:Cinzel;src:url(../fonts/cinzel.woff) format("woff");font-display:swap}
+@font-face{font-family:"Work Sans";src:url(../fonts/worksans.woff) format("woff");font-display:swap}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:#11150f;color:#e8e2d4;font-family:"Work Sans",system-ui,sans-serif;font-size:17px;line-height:1.5}
+main{max-width:380px;margin:0 auto;padding:max(48px,env(safe-area-inset-top)) 20px 40px;text-align:center}
+img{border-radius:14px}
+h1{font-family:Cinzel,serif;font-weight:400;letter-spacing:.28em;font-size:28px;margin:18px 0 6px}
+p{margin:10px 0;color:#a9a596}
+form{margin-top:22px;text-align:left;border:1px solid #2d3429;padding:20px;border-radius:6px}
+label{display:block;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#a9a596;margin-bottom:14px}
+input{display:block;width:100%;margin-top:6px;padding:13px 12px;font:inherit;font-size:17px;color:#e8e2d4;background:#181d16;border:1px solid #2d3429;border-radius:4px}
+input:focus-visible,button:focus-visible{outline:2px solid #c4a571;outline-offset:2px}
+button{display:block;width:100%;min-height:48px;margin-top:10px;font:inherit;font-size:14px;letter-spacing:.2em;text-transform:uppercase;border-radius:4px;cursor:pointer;background:#e8e2d4;color:#11150f;border:1px solid #e8e2d4}
+button.ghost{background:transparent;color:#e8e2d4;border-color:#2d3429}
+.err{color:#e6a08f}
+</style>
+</head>
+<body>
+<main>
+  <img src="icon-192.png" alt="Bonomelli Estate" width="72" height="72">
+  <h1>JARVIS</h1>
+  <p id="msg" role="status">Apro…</p>
+  <button class="ghost" id="riprova" type="button" hidden>Riprova</button>
+  <form id="f" hidden>
+    <label>Email<input type="email" id="em" autocomplete="username" required></label>
+    <label>Password<input type="password" id="pw" autocomplete="current-password" required></label>
+    <button type="submit" id="go">Entra</button>
+    <p class="err" id="er" hidden></p>
+    <button class="ghost" id="dim" type="button">Password dimenticata?</button>
+  </form>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script>
+/* Porta d'ingresso di JARVIS. Qui c'è solo l'accesso: l'app vera arriva dal database dopo il login. */
+(()=>{
+"use strict";
+const $=id=>document.getElementById(id);
+const COPIA="jarvis-app-copia";
+const msg=(t,err)=>{$("msg").textContent=t;$("msg").className=err?"err":"";};
+if(!window.supabase){msg("Serve la connessione a internet per aprire JARVIS. Riprova tra poco.",true);$("riprova").hidden=false;$("riprova").onclick=()=>location.reload();return;}
+const sb=window.supabase.createClient("https://klxcmojwmjilklfoqzhp.supabase.co","sb_publishable_ft-DNpTfQMfHfw08NEvsPg_nIsqkiHR",
+  {auth:{persistSession:true,autoRefreshToken:false,detectSessionInUrl:false,storageKey:"jarvis-bonomelli"}});
+const h=new URLSearchParams(location.hash.replace(/^#/,""));
+
+function chiedi(nota,err){
+  try{localStorage.removeItem(COPIA);}catch(e){}
+  msg(nota||"Entra con la tua email e la tua password.",err);$("riprova").hidden=true;$("f").hidden=false;
+}
+async function apri(){
+  $("f").hidden=true;$("riprova").hidden=true;msg("Apro…");
+  let s=null;
+  try{s=(await sb.auth.getSession()).data.session;}catch(e){}
+  if(!s&&h.get("access_token")&&h.get("refresh_token")){
+    try{s=(await sb.auth.setSession({access_token:h.get("access_token"),refresh_token:h.get("refresh_token")})).data.session;}catch(e){}
+  }
+  if(!s)return chiedi(h.get("error")?"Il link è scaduto. Entra, oppure chiedi una nuova email.":"",!!h.get("error"));
+  let codice=null,negato=false;
+  try{
+    const {data,error}=await sb.from("jarvis_app").select("codice").eq("id",1).maybeSingle();
+    if(data&&data.codice){codice=data.codice;try{localStorage.setItem(COPIA,codice);}catch(e){}}
+    else if(error&&/JWT|401|403|permission/i.test((error.code||"")+" "+(error.message||"")))negato=true;
+    else if(!error)negato=true;
+  }catch(e){}
+  if(negato){try{await sb.auth.signOut();}catch(e){}return chiedi("Non riesco ad aprire JARVIS con questo accesso. Entra di nuovo.",true);}
+  if(!codice){try{codice=localStorage.getItem(COPIA);}catch(e){}}
+  if(!codice){msg("Non riesco ad aprire JARVIS. Controlla la connessione e riprova.",true);$("riprova").hidden=false;return;}
+  document.open();document.write(codice);document.close();
+}
+$("riprova").addEventListener("click",apri);
+$("f").addEventListener("submit",async e=>{
+  e.preventDefault();$("er").hidden=true;$("go").disabled=true;
+  const {error}=await sb.auth.signInWithPassword({email:$("em").value.trim(),password:$("pw").value});
+  $("go").disabled=false;
+  if(error){$("er").textContent=/invalid/i.test(error.message)?"Email o password non corrette.":"Non riesco a entrare: "+error.message;$("er").hidden=false;return;}
+  $("pw").value="";apri();
+});
+$("dim").addEventListener("click",async()=>{
+  const em=$("em").value.trim();$("er").hidden=false;
+  if(!em){$("er").textContent="Scrivi prima la tua email qui sopra.";return;}
+  const {error}=await sb.auth.resetPasswordForEmail(em,{redirectTo:location.origin+"/jarvis/"});
+  $("er").textContent=error?"Non riesco a mandare l'email: "+error.message:"Se l'email è giusta, ti arriva un link per scegliere una nuova password.";
+});
+apri();
+})();
+</script>
+</body>
+</html>
