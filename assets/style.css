@@ -359,3 +359,18 @@ h1{font-family:var(--display);font-weight:400;font-size:clamp(30px,4.6vw,60px);l
 .op-slogan{max-width:38ch;font-family:var(--display);font-size:clamp(18px,2.15vw,27px);line-height:1.32;letter-spacing:.03em;text-wrap:balance;padding:.7em 1.1em;background:rgba(17,21,15,.5);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);border:1px solid rgba(236,230,216,.22)}
 .op-firma{margin:0;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#ece6d8;opacity:.85;animation:rise 1.4s 2s both;text-shadow:0 1px 10px rgba(0,0,0,.7)}
 @media (max-height:900px){.op-cue{display:none}}
+/* apertura: seconda riga del motto e inviti (Private Atelier, collezioni) */
+.op-slogan .op-l2{display:block;margin-top:.5em;color:var(--bronze);letter-spacing:.08em}
+.op-cta{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;animation:rise 1.4s 2.1s both}
+.op-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:14px 24px;border:1px solid #ece6d8;background:#ece6d8;color:#11150f;font:500 12px/1.3 var(--body);letter-spacing:.2em;text-transform:uppercase;text-decoration:none;transition:background .4s ease,border-color .4s ease,color .4s ease}
+.op-btn:hover{background:var(--bronze);border-color:var(--bronze)}
+.op-btn-ghost{background:rgba(17,21,15,.35);color:#ece6d8;border-color:rgba(236,230,216,.6);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+.op-btn-ghost:hover{background:rgba(17,21,15,.35);color:var(--bronze);border-color:var(--bronze)}
+@media (max-width:560px){.op-inner{gap:16px}.op-cta{flex-direction:column;align-self:stretch;justify-self:stretch;gap:10px}}
+.hero-copy .manifesto-voce{margin-top:16px;color:var(--stone)}
+/* pagine delle opere: invito al Private Atelier */
+.cta-h{margin:0;font-family:var(--display);font-weight:400;font-size:clamp(18px,2vw,24px);line-height:1.35;letter-spacing:.05em;max-width:30ch;text-wrap:balance}
+.cta-atelier .btn{line-height:1.4}
+
+/* Telefoni stretti: i pulsanti con testo lungo restano su una riga dove possibile */
+@media (max-width:430px){.btn{letter-spacing:.08em;font-size:12px;padding-left:16px;padding-right:16px;gap:8px}}

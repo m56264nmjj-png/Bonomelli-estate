@@ -100,7 +100,7 @@ PAGES = {
         "en": "reviews.html",
         "it_title": "Recensioni · Bonomelli Estate, padiglioni e arredi in pietra di Brenda Bonomelli",
         "en_title": "Reviews · Bonomelli Estate, stone pavilions and furniture by Brenda Bonomelli",
-        "it_desc": "Le recensioni dei visitatori su Bonomelli Estate, lo studio di Brenda Bonomelli: CONVIVIO, la Serra dei Sogni, i padiglioni e gli arredi in pietra. Lascia anche la tua.",
+        "it_desc": "Le recensioni dei visitatori su Bonomelli Estate, lo studio di Brenda Bonomelli: CONVIVIO, la Serra dei Sogni, i padiglioni e gli arredi in pietra. Lasciate anche la vostra.",
         "en_desc": "Visitor reviews of Bonomelli Estate, Brenda Bonomelli’s studio: CONVIVIO, the Dream Greenhouse, the pavilions and the stone furniture. Leave yours too.",
     },
     "corolla.html": {
@@ -170,7 +170,7 @@ PAGES = {
         "en": "from-the-video.html",
         "it_title": "Dal video: Pavilion BONOMELLI, una biblioteca nel giardino · Bonomelli Estate",
         "en_title": "From the video: Pavilion BONOMELLI, a library in the garden · Bonomelli Estate",
-        "it_desc": "Il Pavilion BONOMELLI che hai visto nel video: padiglione in pietra su due piani con biblioteca. Concept nel tuo giardino da 2.500 €, padiglione costruito da 350.000 €.",
+        "it_desc": "Il Pavilion BONOMELLI che avete visto nel video: padiglione in pietra su due piani con biblioteca. Concept nel vostro giardino da 2.500 €, padiglione costruito da 350.000 €.",
         "en_desc": "The Pavilion BONOMELLI you saw in the video: a two-storey stone pavilion with a library. Concept in your own garden from €2,500, built pavilion from €350,000.",
     },
     "come-lavoro.html": {
@@ -182,9 +182,9 @@ PAGES = {
     },
     "concept-su-misura.html": {
         "en": "bespoke-concept.html",
-        "it_title": "Concept su misura: tre render della tua proprietà in tre giorni · Bonomelli Estate",
+        "it_title": "Concept su misura: tre render della vostra proprietà in tre giorni · Bonomelli Estate",
         "en_title": "Bespoke Concept: three renderings of your property in three days · Bonomelli Estate",
-        "it_desc": "Concept su misura Bonomelli Estate: tre render in alta risoluzione di un padiglione, una serra o un arredo in pietra ambientato nel tuo spazio. 690 €, consegna in tre giorni lavorativi, una revisione compresa.",
+        "it_desc": "Concept su misura Bonomelli Estate: tre render in alta risoluzione di un padiglione, una serra o un arredo in pietra ambientato nel vostro spazio. 690 €, consegna in tre giorni lavorativi, una revisione compresa.",
         "en_desc": "Bonomelli Estate Bespoke Concept: three high-resolution renderings of a pavilion, greenhouse or stone piece set in your own space. €690, delivered in three working days, one revision included.",
     },
     "condizioni.html": {
@@ -198,7 +198,7 @@ PAGES = {
         "en": "contact.html",
         "it_title": "Contatti, consulenza privata e dossier riservato · Bonomelli Estate",
         "en_title": "Contact, private consultation and private dossier · Bonomelli Estate",
-        "it_desc": "Scrivi allo studio Bonomelli Estate: consulenza privata, dossier riservato, collaborazioni. studio@bonomelliestate.it · +39 375 145 8440.",
+        "it_desc": "Scrivete allo studio Bonomelli Estate: consulenza privata, dossier riservato, collaborazioni. studio@bonomelliestate.it · +39 375 145 8440.",
         "en_desc": "Write to the Bonomelli Estate studio: private consultation, private dossier, collaborations. studio@bonomelliestate.it · +39 375 145 8440.",
     },
     "privacy.html": {
@@ -220,7 +220,7 @@ PAGES = {
         "en": "private-atelier.html",
         "it_title": "Private Atelier · Bonomelli Estate",
         "en_title": "Private Atelier · Bonomelli Estate",
-        "it_desc": "Private Atelier Bonomelli Estate: un percorso guidato in otto passi per immaginare un padiglione, la Serra dei Sogni o un arredo in pietra nel tuo luogo, e chiedere un concept su misura a Brenda Bonomelli.",
+        "it_desc": "Private Atelier Bonomelli Estate: un percorso guidato in otto passi per immaginare un padiglione, la Serra dei Sogni o un arredo in pietra nel vostro luogo, e chiedere un concept su misura a Brenda Bonomelli.",
         "en_desc": "Bonomelli Estate Private Atelier: a guided path in eight steps to imagine a pavilion, the Dream Greenhouse or a stone piece in your own place, and ask Brenda Bonomelli for a bespoke concept.",
     },
 }

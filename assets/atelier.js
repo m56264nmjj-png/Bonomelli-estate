@@ -191,8 +191,19 @@
   load();
   if(!Array.isArray(S.solar))S.solar=[];if(!Array.isArray(S.use))S.use=[];
   $('at-prop-other').value=S.propOther;$('at-wish').value=S.wish;$('at-w').value=S.w;$('at-l').value=S.l;$('at-use-other').value=S.useOther;$('at-unknown').checked=!!S.unknown;
+  if(S.prop&&!at.querySelector('[data-group="prop"][data-v="'+S.prop+'"]'))S.prop=null;
+  /* arrivo da una pagina del sito: atelier.html?opera=<data-work> apre sui materiali, con categoria e opera già scelte */
+  var deep=false;
+  try{
+    var q=/[?&]opera=([a-z0-9-]{1,40})(?:&|$)/.exec(location.search||''),wb=q?at.querySelector('[data-group="work"][data-work="'+q[1]+'"]'):null;
+    var cb=wb?at.querySelector('[data-group="cat"][data-cat="'+wb.getAttribute('data-cat')+'"]'):null;
+    if(wb&&cb){
+      if(S.work!==q[1]){S.work=q[1];S.stone=S.shelf=S.config=null;S.solar=[];S.step=4}
+      S.cat=cb.getAttribute('data-v');if(S.step<4)S.step=4;deep=true;
+    }
+  }catch(e){}
   paint();
   var start=Math.min(Math.max(parseInt(S.step,10)||1,1),TOTAL);
-  for(var k=1;k<start;k++){if(!ok(k)){start=k;break}}
+  if(!deep)for(var k=1;k<start;k++){if(!ok(k)){start=k;break}}
   show(start,false);
 })();
