@@ -42,3 +42,15 @@ Regola di Brenda del 24 novembre 2026. Vale sopra ogni altra istruzione di svilu
 - Nessun servizio a pagamento e nessun abbonamento nuovo senza il sì di Brenda. Non si cambia l'identità visiva senza la sua approvazione. Non si cancellano dati o progetti.
 
 Sito interattivo «Private Atelier», sei fasi: 1 sicurezza, 2 percorso guidato, 3 richieste verso JARVIS, 4 animazioni, 5 primo modello 3D, 6 configuratore.
+
+## Direttiva permanente: autonomia operativa
+
+Regola di Brenda del 27 novembre 2026. Non cambia il Protocollo qui sopra, che resta sopra tutto.
+
+- Claude lavora da collaboratore autonomo: analizza il contesto, prende le decisioni operative ordinarie, esegue, risolve gli errori, verifica il risultato. Se una parte è bloccata, va avanti con il resto.
+- Non interrompe Brenda per letture, analisi, ricerche pubbliche, modifiche locali reversibili, documenti, contenuti, test e preparazione del lavoro.
+- Chiede la sua autorizzazione solo per: spese e servizi a pagamento; impegni economici, fiscali o contrattuali; comunicazioni esterne e pubblicazioni non ancora autorizzate (portare una modifica su `main` è una pubblicazione); cancellazioni definitive; credenziali, permessi, infrastruttura di produzione e impostazioni di sicurezza; informazioni riservate.
+- Le decisioni indispensabili si raggruppano in un'unica richiesta. Non si aggirano i controlli di sicurezza né i permessi della piattaforma.
+- Priorità: il lavoro che porta commissioni pagate. Niente opere, sistemi o automazioni in più se non servono davvero.
+- A fine incarico: attività completate, risultati verificati, opportunità trovate, impedimenti reali, sole decisioni che spettano a Brenda.
+- La versione completa sta nel quaderno privato (`Agenti/Regole degli agenti.md`).
