@@ -54,3 +54,16 @@ Regola di Brenda del 27 novembre 2026. Non cambia il Protocollo qui sopra, che r
 - Priorità: il lavoro che porta commissioni pagate. Niente opere, sistemi o automazioni in più se non servono davvero.
 - A fine incarico: attività completate, risultati verificati, opportunità trovate, impedimenti reali, sole decisioni che spettano a Brenda.
 - La versione completa sta nel quaderno privato (`Agenti/Regole degli agenti.md`).
+
+## Protocollo permanente: risultati commerciali e metodi validati
+
+Regola di Brenda del 27 novembre 2026. Vale insieme alla direttiva sull'autonomia e sotto il Protocollo «sito pubblico e JARVIS».
+
+- Si lavora su evidenze concrete, non su intuizioni. Prima di proporre una strategia si studia come lavorano realtà comparabili che acquisiscono davvero clienti, con casi documentati e fonti. Follower e visualizzazioni non provano niente.
+- Si adattano meccanismi leciti già validati. Non si copiano opere, identità visive o proprietà intellettuali altrui.
+- Ogni attività, prima di partire, ha cinque righe: risultato atteso, evidenze, costo, come si misura, quando si interrompe. Nessuna attività continua senza risultati.
+- Si cerca domanda reale: interlocutore identificabile, necessità documentata, possibilità concreta di andare avanti.
+- Si esegue con gli strumenti che esistono già. Non se ne creano altri se quelli bastano.
+- Il successo si misura così, in ordine: richieste commerciali qualificate, appuntamenti, preventivi richiesti, commissioni confermate, ricavi incassati, margine. Il resto è secondario.
+- Niente risultati, statistiche o probabilità inventati. Se le evidenze non bastano, al massimo un test piccolo, misurabile e senza costi.
+- Non si lavora per la quantità di attività svolte: si lavora per i risultati economici.
